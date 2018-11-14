@@ -1,0 +1,56 @@
+<br><br>
+<div class="container">
+  <h1>Mined Blocks</h1>
+  <table class="table table-striped">
+    <tr>
+      <th>Index</th>
+      <th>Timestamp</th>
+      <th>Transactions</th>
+      <th>Proof Of Work</th>
+      <th>Previous Hash</th>
+    </tr>
+    <tr *ngFor="let block of chain">
+      <td>{{block.index}}</td>
+      <td>{{block.timestamp}}</td>
+      <td><button class="btn btn-info" (click)="initializeTransactions(block.transactions)" data-toggle="modal" data-target="#myModal">View Transactions</button></td>
+      <td>{{block.proof}}</td>
+      <td>{{block.previous_hash}}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Transactions Log</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <table class="table table-striped">
+            <tr>
+              <td>Sender</td>
+              <td>Reciever</td>
+              <td>Amount</td>
+            </tr>
+            <tr *ngFor="let t of transactions" >
+              <td>{{t.sender}}</td>
+              <td>{{t.reciever}}</td>
+              <td>{{t.amount}}</td>
+            </tr>
+          </table>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

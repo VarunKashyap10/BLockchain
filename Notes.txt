@@ -1,0 +1,33 @@
+Blockchain Notes :
+
+blockchain program, self => chain, current_transactions, atleast one block
+
+
+
+
+block => index, timestamp, transactions, proof, previous_hash
+
+
+chain => array of blocks
+
+
+
+new block => create a block and apppend it to the array
+
+
+transaction => business logic information that goes into a newly created block. 
+	Eg. monetary  transactions.
+	transaction > sender, reciver, amount
+	
+new transaction => create transaction and add to current_transactions
+
+
+hash => encodes an entire block. Returns hexdigest
+
+proof of work => uses the previous proof and current proof to create a 
+	mathematical complexity that has to be guessed over multiple values of 
+	proofs. Eg. f'{last_proof}{current_proof}' > hash much contain leading zeros.
+	
+------------------------------------------------------------------------------
+
+mine() => 

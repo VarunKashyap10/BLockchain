@@ -1,0 +1,25 @@
+<br><br>
+<div class="container">
+  <h1>New Transaction</h1>
+  <form #transactionForm="ngForm" (onsubmit)="createNewTransaction()">
+    <div class="form-group">
+      <label for="text">Sender:</label>
+      <input type="text" class="form-control" name="sender" id="sender" [(ngModel)]="transaction.sender">
+    </div>
+    <div class="form-group">
+      <label for="recipient">Recipient:</label>
+      <input type="text" class="form-control" name="recipient" id="recipient" [(ngModel)]="transaction.recipient">
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" class="form-control" name="amount" id="amount" [(ngModel)]="transaction.amount">
+    </div>
+    <button type="submit" (click)="createNewTransaction()" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<hr>
+
+<div class="container">
+  <button  class="btn btn-success" (click)="mineBlock()">Mine a new block</button>
+</div>
